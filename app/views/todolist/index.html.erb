@@ -1,0 +1,23 @@
+<h1>Todolist#index</h1>
+<p>Find me in app/views/todolist/index.html.erb</p>
+<table>
+    <thead>
+    <tr>
+      <th>
+        <th>Title</th>
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @todos.each do |todo| %>
+    <tr>
+      <td><%= todo.title %></td>
+      <td><%= link_to 'Show', todo %></td>
+      <td><%= link_to 'Edit', edit_todolist_path(todo) %></td>
+      <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+<%= link_to '完了したタスクを見る', controller: "done", action:  "index"  %>

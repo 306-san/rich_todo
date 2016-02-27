@@ -1,0 +1,14 @@
+<h1>Todolist#show</h1>
+<p>Find me in app/views/todolist/show.html.erb</p>
+<h1>タイトル</h1>
+<h2><%= @todo.title %></h2>
+<h1>内容</h1>
+<h2><%= @todo.description %></h2>
+<h1>完了</h1>
+<% if @todo.done == true%>
+<h2>完了</h2>
+<% else %>
+<h2>まだ</h2>
+<% end %>
+<%= link_to 'Edit', edit_todolist_path(@todo) %>
+<%= link_to '戻る', :back %>
